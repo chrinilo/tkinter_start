@@ -1,6 +1,6 @@
 """ a """
 import tkinter as tk
-from tkinter import BOTH
+
 
 import asyncio
 import python_weather
