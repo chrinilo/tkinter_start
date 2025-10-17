@@ -26,6 +26,6 @@ def run_weather():
 
 button_1 = tk.Button(root, text="hello world", command=show_tet).grid(row=0,column=0)
 
-button_2 = tk.Button(root, text="weather", command=run_weather).grid(row=4,column= 4)
+button_2 = tk.Button(root, text="weather(fryser programmet litt)", command=run_weather).grid(row=4,column= 4)
 
 tk.mainloop()
