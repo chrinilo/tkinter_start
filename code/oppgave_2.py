@@ -2,30 +2,30 @@
 import tkinter as tk
 from tkinter import BOTH
 
+import asyncio
+import python_weather
+
+
 root = tk.Tk()
 root.title("label basics")
 root.iconbitmap("img/thinking.ico")
 root.geometry("400x400")
 root.resizable(0, 0)  # type:ignore
-root.config(bg="green")
 
-name_label_1 = tk.Label(root, text="hello world 1")
-name_label_1.pack()
+def show_tet():
+    tk.Label(root,text="hello {name}").grid(row=1,column=0)
 
-name_label_2 = tk.Label(root, text="hello world 2", font=("Ariel", 18, "bold"))
-name_label_2.pack()
+async def weather():
+    async with python_weather.Client(unit=python_weather.METRIC)as client:
+        weather_var = await client.get('Halden')
+        tk.Label(root, text= f"det er {weather_var.temperature}℃ ute"). grid(row=5, column=4)
+        
+def run_weather():
+    asyncio.run(weather())
 
-name_label_3 = tk.Label(root, text="hello world 3", font=("Ariel", 18), bg="blue")
-name_label_3.pack(padx=20, pady=70)
 
-name_label_4 = tk.Label(
-    root, text="hello world 4", font=("Ariel", 18), bg="red", fg="blue"
-)
-name_label_4.pack(pady=(50, 50), ipadx=50, anchor="w")
+button_1 = tk.Button(root, text="hello world", command=show_tet).grid(row=0,column=0)
 
-name_label_5 = tk.Label(
-    root, text="hello world 5", font=("Ariel", 18), bg="blue", fg="#123456"
-)
-name_label_5.pack(fill=BOTH, expand=True)
+button_2 = tk.Button(root, text="weather", command=run_weather).grid(row=4,column= 4)
 
 tk.mainloop()
