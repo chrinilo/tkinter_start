@@ -10,20 +10,20 @@ window.title("GUI Example")
 
 # Create a Frame widget with all options
 frame = create_widget(window, tk.Frame, bg='lightblue', bd=3, cursor='hand2', height=100, 
-                        highlightcolor='red', highlightthickness=2, highlightbackground='black', 
+                        highlightcolor='red', highlightthickness=2, highlightbackground='black',
                         relief=tk.RAISED, width=200)
 frame.pack(padx=20, pady=20)
 
 # Create Label widget with all options
-label = create_widget(frame, tk.Label, text='GeeksForGeeks', font='50', bg='lightblue', bd=3, cursor='hand2',
-                        highlightcolor='red', highlightthickness=2, highlightbackground='black', 
-                        relief=tk.RAISED)
+label = create_widget(frame, tk.Label, text='GeeksForGeeks', font='50', bg='lightblue', bd=3,
+                        cursor='hand2',highlightcolor='red', highlightthickness=2,
+                        highlightbackground='black', relief=tk.RAISED)
 label.pack()
 
 # Create a frame for buttons
 button_frame = create_widget(window, tk.Frame, bg='lightblue', bd=3, cursor='hand2', height=50, 
-                                highlightcolor='red', highlightthickness=2, highlightbackground='black', 
-                                relief=tk.RAISED, width=200)
+                                highlightcolor='red', highlightthickness=2,
+                                highlightbackground='black', relief=tk.RAISED, width=200)
 button_frame.pack(pady=10)
 
 # Function to create buttons with all options

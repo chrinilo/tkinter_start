@@ -23,14 +23,15 @@ for text, value in values.items():
     ).grid(row=0, column=value, padx=20)
 
 
-def PrintOut():
+def print_out():
     if v.get() == 1:
         tk.Label(outputFrame, text="du er myndig").pack()
     else:
         tk.Label(outputFrame, text="du er umyndig").pack()
     print("done")
 
-print_button = tk.Button(inputFrame, text="OK", command=PrintOut)
+
+print_button = tk.Button(inputFrame, text="OK", command=print_out)
 
 print_button.grid(row=1, column=0, columnspan=2)
 
